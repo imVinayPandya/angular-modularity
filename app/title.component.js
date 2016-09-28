@@ -12,10 +12,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var user_service_1 = require("./user.service");
 var TitleComponent = (function () {
-    function TitleComponent() {
+    function TitleComponent(userService) {
         this.subtitle = '';
         this.title = 'Angular Module';
+        this.user = '';
+        this.user = userService.userName;
     }
     __decorate([
         core_1.Input(), 
@@ -27,7 +30,7 @@ var TitleComponent = (function () {
             selector: 'app-title',
             templateUrl: 'title.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [user_service_1.UserService])
     ], TitleComponent);
     return TitleComponent;
 }());

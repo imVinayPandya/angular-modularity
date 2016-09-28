@@ -3,6 +3,7 @@
  */
 
 import {Component, Input} from "@angular/core";
+import {UserService} from "./user.service";
 
 @Component({
     moduleId: module.id,
@@ -12,4 +13,9 @@ import {Component, Input} from "@angular/core";
 export class TitleComponent {
     @Input() subtitle = '';
     title = 'Angular Module';
+    user = ''
+
+    constructor(userService: UserService) {
+        this.user = userService.userName;
+    }
 }

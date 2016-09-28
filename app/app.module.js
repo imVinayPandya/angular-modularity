@@ -16,6 +16,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require("./app.component");
 var highlight_directive_1 = require("./highlight.directive");
 var title_component_1 = require("./title.component");
+var user_service_1 = require("./user.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ var AppModule = (function () {
                 highlight_directive_1.HighlightDirective,
                 title_component_1.TitleComponent
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            providers: [user_service_1.UserService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
