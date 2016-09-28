@@ -1,6 +1,3 @@
-/**
- * Created by vinay on 9/26/2016.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,18 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v1)';
+var crisis_service_1 = require('./crisis.service');
+var CrisisListComponent = (function () {
+    function CrisisListComponent(crisisService) {
+        this.crisisService = crisisService;
     }
-    AppComponent = __decorate([
+    CrisisListComponent.prototype.ngOnInit = function () {
+        this.crisises = this.crisisService.getCrises();
+    };
+    CrisisListComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n        <app-title [subtitle]=\"subtitle\"></app-title>\n        <nav>\n            <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n            <a routerLink=\"crisis\" routerLinkActive=\"active\">Crisis center</a>\n            <a routerLink=\"heroes\" routerLinkActive=\"active\">Heroes</a>\n        </nav>\n        <router-outlet></router-outlet>\n    "
+            template: "\n    <h3 highlight>Crisis List</h3>\n    <div *ngFor='let crisis of crisises | async'>\n      <a routerLink=\"{{'../' + crisis.id}}\">{{crisis.id}} - {{crisis.name}}</a>\n    </div>\n  "
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [crisis_service_1.CrisisService])
+    ], CrisisListComponent);
+    return CrisisListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CrisisListComponent = CrisisListComponent;
+//# sourceMappingURL=crisis-list.component.js.map

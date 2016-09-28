@@ -1,6 +1,3 @@
-/**
- * Created by vinay on 9/26/2016.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,18 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v1)';
+var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
+var hero_component_1 = require('./hero.component');
+var hero_detail_component_1 = require('./hero-detail.component');
+var hero_list_component_1 = require('./hero-list.component');
+var hero_routing_1 = require('./hero.routing');
+var HeroModule = (function () {
+    function HeroModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n        <app-title [subtitle]=\"subtitle\"></app-title>\n        <nav>\n            <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n            <a routerLink=\"crisis\" routerLinkActive=\"active\">Crisis center</a>\n            <a routerLink=\"heroes\" routerLinkActive=\"active\">Heroes</a>\n        </nav>\n        <router-outlet></router-outlet>\n    "
+    HeroModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule, forms_1.FormsModule, hero_routing_1.routing],
+            declarations: [
+                hero_component_1.HeroComponent, hero_detail_component_1.HeroDetailComponent, hero_list_component_1.HeroListComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HeroModule);
+    return HeroModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HeroModule = HeroModule;
+//# sourceMappingURL=hero.module.js.map

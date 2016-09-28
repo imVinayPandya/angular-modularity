@@ -1,6 +1,3 @@
-/**
- * Created by vinay on 9/26/2016.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,18 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v1)';
+var common_1 = require('@angular/common');
+var crisis_list_component_1 = require('./crisis-list.component');
+var crisis_detail_component_1 = require('./crisis-detail.component');
+var crisis_service_1 = require('./crisis.service');
+var crisis_routing_1 = require('./crisis.routing');
+var CrisisModule = (function () {
+    function CrisisModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n        <app-title [subtitle]=\"subtitle\"></app-title>\n        <nav>\n            <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n            <a routerLink=\"crisis\" routerLinkActive=\"active\">Crisis center</a>\n            <a routerLink=\"heroes\" routerLinkActive=\"active\">Heroes</a>\n        </nav>\n        <router-outlet></router-outlet>\n    "
+    CrisisModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule, crisis_routing_1.routing],
+            declarations: [crisis_detail_component_1.CrisisDetailComponent, crisis_list_component_1.CrisisListComponent],
+            providers: [crisis_service_1.CrisisService]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CrisisModule);
+    return CrisisModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CrisisModule = CrisisModule;
+//# sourceMappingURL=crisis.module.js.map

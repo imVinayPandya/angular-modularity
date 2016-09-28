@@ -9,20 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require("@angular/common");
-var forms_1 = require("@angular/forms");
-var awesome_pipe_1 = require("./awesome.pipe");
 var contact_component_1 = require("./contact.component");
 var contact_service_1 = require("./contact.service");
-var highlight_directive_1 = require("./highlight.directive");
+var contact_routing_1 = require("./contact.routing");
+var shared_module_1 = require("../shared/shared.module");
 var ContactModule = (function () {
     function ContactModule() {
     }
     ContactModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, forms_1.FormsModule],
-            declarations: [contact_component_1.ContactComponent, highlight_directive_1.HighlightDirective, awesome_pipe_1.AwesomePipe],
-            exports: [contact_component_1.ContactComponent],
+            imports: [shared_module_1.SharedModule, contact_routing_1.routing],
+            declarations: [contact_component_1.ContactComponent],
             providers: [contact_service_1.ContactService]
         }), 
         __metadata('design:paramtypes', [])

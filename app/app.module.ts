@@ -6,20 +6,20 @@ import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from "./app.component";
-import {HighlightDirective} from "./highlight.directive";
-import {TitleComponent} from "./title.component";
-import {UserService} from "./user.service";
 import {ContactModule} from "./contact/contact.module";
+import {routing} from "./app.routing";
+import {CoreModule} from "./core/core.module";
 
 @NgModule({
-    imports: [BrowserModule, ContactModule],
+    imports: [
+        BrowserModule,
+        ContactModule,
+        CoreModule.forRoot({userName: 'Miss Marple'}),
+        routing],
     declarations: [
-        AppComponent,
-        HighlightDirective,
-        TitleComponent,
+        AppComponent
     ],
-    bootstrap: [AppComponent],
-    providers: [UserService]
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

@@ -1,6 +1,3 @@
-/**
- * Created by vinay on 9/26/2016.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,18 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v1)';
+var router_1 = require('@angular/router');
+var CrisisDetailComponent = (function () {
+    function CrisisDetailComponent(route) {
+        this.route = route;
     }
-    AppComponent = __decorate([
+    CrisisDetailComponent.prototype.ngOnInit = function () {
+        this.id = parseInt(this.route.snapshot.params['id'], 10);
+    };
+    CrisisDetailComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n        <app-title [subtitle]=\"subtitle\"></app-title>\n        <nav>\n            <a routerLink=\"contact\" routerLinkActive=\"active\">Contact</a>\n            <a routerLink=\"crisis\" routerLinkActive=\"active\">Crisis center</a>\n            <a routerLink=\"heroes\" routerLinkActive=\"active\">Heroes</a>\n        </nav>\n        <router-outlet></router-outlet>\n    "
+            template: "\n    <h3 highlight>Crisis Detail</h3>\n    <div>Crisis id: {{id}}</div>\n    <br>\n    <a routerLink=\"../list\">Crisis List</a>\n  "
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+    ], CrisisDetailComponent);
+    return CrisisDetailComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CrisisDetailComponent = CrisisDetailComponent;
+//# sourceMappingURL=crisis-detail.component.js.map
