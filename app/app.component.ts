@@ -5,6 +5,8 @@
 import { Component } from '@angular/core';
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular App</h1>'
+    template: '<app-title [subtitle]="subtitle"></app-title>'
 })
-export class AppComponent { }
+export class AppComponent {
+    subtitle = '(v1)';
+}
