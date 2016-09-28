@@ -1,6 +1,3 @@
-/**
- * Created by vinay on 9/28/2016.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -14,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var HighlightDirective = (function () {
     function HighlightDirective(renderer, el) {
-        renderer.setElementStyle(el.nativeElement, "backgroundColor", "gold");
-        console.log("* AppRoot highlight called for " + el.nativeElement.tagName);
+        renderer.setElementStyle(el.nativeElement, "backgroundColor", "powderblue");
+        console.log("* Contact highlight called for " + el.nativeElement.tagName);
     }
     HighlightDirective = __decorate([
-        core_1.Directive({ selector: '[highlight]' }), 
+        core_1.Directive({
+            selector: '[highlight], input'
+        }), 
         __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
     ], HighlightDirective);
     return HighlightDirective;

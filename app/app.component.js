@@ -19,7 +19,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<app-title [subtitle]="subtitle"></app-title>'
+            template: "\n        <app-title [subtitle]=\"subtitle\"></app-title> \n        <app-contact></app-contact>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

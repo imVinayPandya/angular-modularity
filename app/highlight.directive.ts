@@ -9,6 +9,6 @@ import {Directive, Renderer, ElementRef} from "@angular/core";
 export class HighlightDirective {
     constructor(renderer: Renderer, el: ElementRef){
         renderer.setElementStyle(el.nativeElement, "backgroundColor", "gold");
-        console.log('* AppRoot highlight called for ${el.nativeElement.tagName}');
+        console.log(`* AppRoot highlight called for ${el.nativeElement.tagName}`);
     }
 }

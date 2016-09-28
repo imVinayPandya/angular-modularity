@@ -1,6 +1,3 @@
-/**
- * Created by vinay on 9/28/2016.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,16 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var HighlightDirective = (function () {
-    function HighlightDirective(renderer, el) {
-        renderer.setElementStyle(el.nativeElement, "backgroundColor", "gold");
-        console.log("* AppRoot highlight called for " + el.nativeElement.tagName);
+var AwesomePipe = (function () {
+    function AwesomePipe() {
     }
-    HighlightDirective = __decorate([
-        core_1.Directive({ selector: '[highlight]' }), 
-        __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
-    ], HighlightDirective);
-    return HighlightDirective;
+    AwesomePipe.prototype.transform = function (phrase) {
+        return phrase ? 'Awesome ' + phrase : '';
+    };
+    AwesomePipe = __decorate([
+        core_1.Pipe({
+            name: 'awesome'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AwesomePipe);
+    return AwesomePipe;
 }());
-exports.HighlightDirective = HighlightDirective;
-//# sourceMappingURL=highlight.directive.js.map
+exports.AwesomePipe = AwesomePipe;
+//# sourceMappingURL=awesome.pipe.js.map
